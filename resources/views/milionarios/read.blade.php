@@ -14,9 +14,10 @@
     <body>
         <header>
             <nav>
-                <div class="nav-wrapper #4db6ac teal lighten-2">
-                    <a href="#!" class="brand-logo offset-s1"><i class="material-icons"  >wb_sunny</i>JLS</a>
+                <div class="nav-wrapper green">
+                    <a href="#!" class="brand-logo offset-s1"><i class="material-icons"  >monetization_on</i>Os Milionários</a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons"  >menu</i></a>
+
                     <ul class="right hide-on-med-and-down">
                         <!--                        <li><a href="sass.html">Sass</a></li>
                                                 <li><a href="badges.html">Components</a></li>
@@ -54,10 +55,10 @@
                         @endguest
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
-                        <li><a href="sass.html">Sass</a></li>
-                        <li><a href="badges.html">Components</a></li>
-                        <li><a href="collapsible.html">Javascript</a></li>
-                        <li><a href="mobile.html">Mobile</a></li>
+                        <li><a href="/" class="collection-item">JLS online</a></li>
+                        <li><a href="/" class="collection-item">Conferir Resultados</a></li>
+                        <li><a href="/jogos/create" class="collection-item">Cadastrar Jogos</a></li>
+                        <li><a href="/" class="collection-item">Gerador de Numeros</a></li>
                     </ul>
                 </div>
             </nav>
@@ -65,25 +66,54 @@
         <main>
             <div class="row">
 
-                <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+                <div class="col s12 m4 l3 hide-on-small-only"> <!-- Note that "m4 l3" was added -->
                     <!-- Grey navigation panel-->
 
                     <div class="collection">
-                        <a href="/milionarios" class="collection-item">Milionários</a>
+                        <a href="/" class="collection-item">JLS online</a>
+                        <a href="/" class="collection-item">Conferir Resultados</a>
+                        <a href="/jogos/create" class="collection-item">Cadastrar Jogos</a>
+                        <a href="/" class="collection-item">Gerador de Numeros</a>
+                        <a href="/" class="collection-item"></a>
 
                     </div>
 
                 </div>
 
                 <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
-                    
-                    @yield('portal')
+                    <small>{{session()->get('data')}}</small>
+                    <div class="row">
+                        <div class="fixed-action-btn toolbar">
+                            <a class="btn-floating btn-large orange">
+                                <i class="large material-icons">dehaze</i>
+                            </a>
+                            <ul>
+                                <li><a href="/organizacao" class="red" title="Organizações"><i class="material-icons">account_balance</i></a></li>
+                                <li><a href="/apostador" class="yellow darken-1" title="Apostadores"><i class="material-icons">person_add</i></a></li>
+                                <li><a href="/grupo" class="green" title="Grupos"><i class="material-icons">group</i></a></li>
+                            </ul>
+                        </div>
+                       
+                    </div>
+                    @yield('milion')
 
                 </div>
 
             </div>
+            <!--            <div class="fixed-action-btn horizontal">
+                            <a class="btn-floating btn-large #e65100 orange darken-4">
+                                <i class="large material-icons">add</i>
+                            </a>
+                            <ul>
+                                <li><a href="/organizacao" class="btn-floating red" title="Organizações"><i class="material-icons">account_balance</i></a></li>
+                                <li><a href="/apostador" class="btn-floating yellow darken-1" title="Apostadores"><i class="material-icons">person_add</i></a></li>
+                                <li><a href="/grupo" class="btn-floating green" title="Grupos"><i class="material-icons">group</i></a></li>
+                                <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+                            </ul>
+                        </div>-->
         </main>
         <footer class="page-footer #004d40 teal darken-4">
+
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">
@@ -103,8 +133,8 @@
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    © 2014 Copyright Text
-                    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                    © 2020 Copyright Text
+
                 </div>
             </div>
         </footer>
@@ -115,6 +145,7 @@
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
         <script src="{{ asset('js/main.js') }}" defer></script>
 
     </body>
